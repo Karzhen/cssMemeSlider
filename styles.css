@@ -133,6 +133,6 @@ input[type="radio"] {
 #btn3:checked ~ .pagination > label[for="btn3"],
 #btn4:checked ~ .pagination > label[for="btn4"],
 #btn5:checked ~ .pagination > label[for="btn5"] {
-    background-color: darkcyan;
+    background-color: darkgray;
     transition: background-color 1s;
 }

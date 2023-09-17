@@ -1,0 +1,17 @@
+@media screen and (min-width: 640px) and (max-width: 1080px) {
+    body {
+        max-width: 1080px;
+    }
+
+    .slider {
+        height: 85%;
+    }
+
+    .pagination {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        bottom: 7%;
+        transform: translate(-50%);
+    }
+}
