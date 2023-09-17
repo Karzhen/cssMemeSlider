@@ -5,6 +5,10 @@
 }
 
 body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #2b2d30;
 }
 
@@ -19,12 +23,84 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.slides-images {
-    width: 600px;
-    height: 400px;
+.slider {
+    width: 95%;
+    height: 85%;
+    margin: 20px auto;
+    background-color: #FFFFFF;
+    /*overflow: hidden;*/
+}
+
+.slider-images {
+    display: flex;
+    height: 100%;
+    width: 500%;
+    background-color: crimson;
+}
+
+.slide-image {
+    width: 20%;
+    transition: 0.4s ease;
 }
 
 .image {
     max-width: 100%;
     max-height: 100%;
+    /*margin: 0 auto;*/
+}
+
+.slides-text {
+    display: flex;
+    position: absolute;
+    left: 10%;
+    bottom: 20px;
+    transform: translate(-10%);
+}
+
+.pagination {
+    display: flex;
+    position: absolute;
+    left: 90%;
+    bottom: 20px;
+    transform: translate(-80%);
+}
+
+.pagination .button {
+    width: 20px;
+    height: 20px;
+    background-color: darkred;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.pagination .button:hover {
+    background-color: crimson;
+    transition: 1s;
+}
+
+input[type="radio"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+#btn1:checked ~ .first-image {
+    margin-left: 0;
+}
+
+#btn2:checked ~ .first-image {
+    margin-left: -20%;
+}
+
+#btn3:checked ~ .first-image {
+    margin-left: -40%;
+}
+
+#btn4:checked ~ .first-image {
+    margin-left: -60%;
+}
+
+#btn5:checked ~ .first-image {
+    margin-left: -80%;
 }
