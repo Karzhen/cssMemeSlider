@@ -16,8 +16,8 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     background-color: aliceblue;
     border: 1px solid darkred;
     transform: translate(-50%, -50%);
@@ -26,49 +26,63 @@ body {
 .slider {
     width: 95%;
     height: 85%;
-    margin: 20px auto;
+    margin: 5% auto 5%;
     background-color: #FFFFFF;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 .slider-images {
     display: flex;
     height: 100%;
     width: 500%;
-    background-color: crimson;
+    background-color: white;
 }
 
 .slide-image {
     width: 20%;
     transition: 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image {
     max-width: 100%;
     max-height: 100%;
-    /*margin: 0 auto;*/
 }
 
 .slides-text {
     display: flex;
     position: absolute;
     left: 10%;
-    bottom: 20px;
+    bottom: 5%;
     transform: translate(-10%);
+    transition: 0.4s ease;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.slides-text > div {
+    position: absolute;
+    left: 10%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    white-space: nowrap;
 }
 
 .pagination {
     display: flex;
     position: absolute;
     left: 90%;
-    bottom: 20px;
-    transform: translate(-80%);
+    bottom: 3%;
+    transform: translate(-90%);
 }
 
 .pagination .button {
     width: 20px;
     height: 20px;
-    background-color: darkred;
+    border: 1px solid black;
+    background-color: darkblue;
     border-radius: 10px;
     margin-right: 10px;
     cursor: pointer;
@@ -76,7 +90,7 @@ body {
 }
 
 .pagination .button:hover {
-    background-color: crimson;
+    background-color: darkcyan;
     transition: 1s;
 }
 
@@ -85,22 +99,40 @@ input[type="radio"] {
     visibility: hidden;
 }
 
-#btn1:checked ~ .first-image {
+#btn1:checked ~ .slider-images .first-image {
     margin-left: 0;
 }
 
-#btn2:checked ~ .first-image {
+#btn2:checked ~ .slider-images .first-image {
     margin-left: -20%;
 }
 
-#btn3:checked ~ .first-image {
+#btn3:checked ~ .slider-images .first-image {
     margin-left: -40%;
 }
 
-#btn4:checked ~ .first-image {
+#btn4:checked ~ .slider-images .first-image {
     margin-left: -60%;
 }
 
-#btn5:checked ~ .first-image {
+#btn5:checked ~ .slider-images .first-image {
     margin-left: -80%;
+}
+
+#btn1:checked ~ .slides-text > div:nth-child(1),
+#btn2:checked ~ .slides-text > div:nth-child(2),
+#btn3:checked ~ .slides-text > div:nth-child(3),
+#btn4:checked ~ .slides-text > div:nth-child(4),
+#btn5:checked ~ .slides-text > div:nth-child(5) {
+    left: 10%;
+    opacity: 1;
+}
+
+#btn1:checked ~ .pagination > label[for="btn1"],
+#btn2:checked ~ .pagination > label[for="btn2"],
+#btn3:checked ~ .pagination > label[for="btn3"],
+#btn4:checked ~ .pagination > label[for="btn4"],
+#btn5:checked ~ .pagination > label[for="btn5"] {
+    background-color: darkcyan;
+    transition: background-color 1s;
 }
