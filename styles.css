@@ -6,27 +6,22 @@
 
 body {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #2b2d30;
 }
 
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    height: 90%;
+    height: 95%;
+    width: 95%;
+    margin: 0 auto;
     background-color: aliceblue;
     border: 1px solid darkred;
-    transform: translate(-50%, -50%);
+    transition: width .5s;
 }
 
 .slider {
+    height: 70%;
     width: 95%;
-    height: 85%;
-    margin: 5% auto 5%;
+    margin: 0 auto;
     background-color: #FFFFFF;
     overflow: hidden;
 }
@@ -35,7 +30,7 @@ body {
     display: flex;
     height: 100%;
     width: 500%;
-    background-color: white;
+    background-color: #FFFFFF;
 }
 
 .slide-image {
@@ -51,88 +46,100 @@ body {
     max-height: 100%;
 }
 
-.slides-text {
+.controls_text {
+    width: 100%;
     display: flex;
-    position: absolute;
-    left: 10%;
-    bottom: 5%;
-    transform: translate(-10%);
-    transition: 0.4s ease;
-    font-family: Arial;
-    font-size: 20px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.slides-text > div {
-    position: absolute;
-    left: 10%;
+.slides-text {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    transform: translate(5%);
+    transition: 0.4s ease;
+    font-family: Arial;
+    font-size: 2vw;
+}
+
+.text1, .text2, .text3, .text4, .text5 {
+    display: none;
+}
+
+.slides-text > p {
     opacity: 0;
     transition: opacity 0.4s ease;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 .pagination {
     display: flex;
-    position: absolute;
-    left: 90%;
-    bottom: 3%;
-    transform: translate(-90%);
 }
 
-.pagination .button {
-    width: 20px;
-    height: 20px;
+.pagination label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 1vh;
+    border-radius: 50%;
+}
+
+.button {
+    width: 2vh;
+    height: 2vh;
     border: 1px solid black;
-    background-color: darkblue;
-    border-radius: 10px;
-    margin-right: 10px;
+    background-color: lightblue;
+    border-radius: 50%;
     cursor: pointer;
     transition: 1s;
 }
 
-.pagination .button:hover {
+input[type="radio"] {
+    visibility: hidden;
+}
+
+#btn1:checked ~ .slider > .slider-images .first-image {
+    margin-left: 0;
+}
+
+#btn2:checked ~ .slider > .slider-images .first-image {
+    margin-left: -20%;
+}
+
+#btn3:checked ~ .slider > .slider-images .first-image {
+    margin-left: -40%;
+}
+
+#btn4:checked ~ .slider > .slider-images .first-image {
+    margin-left: -60%;
+}
+
+#btn5:checked ~ .slider > .slider-images .first-image {
+    margin-left: -80%;
+}
+
+label:hover .button {
     background-color: darkcyan;
     transition: 1s;
 }
 
-input[type="radio"] {
-    position: absolute;
-    visibility: hidden;
-}
-
-#btn1:checked ~ .slider-images .first-image {
-    margin-left: 0;
-}
-
-#btn2:checked ~ .slider-images .first-image {
-    margin-left: -20%;
-}
-
-#btn3:checked ~ .slider-images .first-image {
-    margin-left: -40%;
-}
-
-#btn4:checked ~ .slider-images .first-image {
-    margin-left: -60%;
-}
-
-#btn5:checked ~ .slider-images .first-image {
-    margin-left: -80%;
-}
-
-#btn1:checked ~ .slides-text > div:nth-child(1),
-#btn2:checked ~ .slides-text > div:nth-child(2),
-#btn3:checked ~ .slides-text > div:nth-child(3),
-#btn4:checked ~ .slides-text > div:nth-child(4),
-#btn5:checked ~ .slides-text > div:nth-child(5) {
-    left: 10%;
+#btn1:checked ~ .controls_text > .slides-text > .text1,
+#btn2:checked ~ .controls_text > .slides-text > .text2,
+#btn3:checked ~ .controls_text > .slides-text > .text3,
+#btn4:checked ~ .controls_text > .slides-text > .text4,
+#btn5:checked ~ .controls_text > .slides-text > .text5 {
+    display: block;
     opacity: 1;
 }
 
-#btn1:checked ~ .pagination > label[for="btn1"],
-#btn2:checked ~ .pagination > label[for="btn2"],
-#btn3:checked ~ .pagination > label[for="btn3"],
-#btn4:checked ~ .pagination > label[for="btn4"],
-#btn5:checked ~ .pagination > label[for="btn5"] {
-    background-color: darkgray;
+#btn1:checked ~ .controls_text > .pagination > .label1 > .button,
+#btn2:checked ~ .controls_text > .pagination > .label2 > .button,
+#btn3:checked ~ .controls_text > .pagination > .label3 > .button,
+#btn4:checked ~ .controls_text > .pagination > .label4 > .button,
+#btn5:checked ~ .controls_text > .pagination > .label5 > .button {
+    background-color: darkred;
     transition: background-color 1s;
 }
