@@ -4,6 +4,16 @@
     padding: 0;
 }
 
+.opacityOnOff {
+    animation-name: opacityOnOff;
+    animation-duration: 2s;
+}
+
+@keyframes opacityOnOff {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
 body {
     height: 100vh;
     background-color: #2b2d30;
@@ -57,21 +67,15 @@ body {
     width: 70%;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: flex-start;
     transform: translate(5%);
     transition: 0.4s ease;
     font-family: Arial;
     font-size: 2vw;
 }
 
-.text1, .text2, .text3, .text4, .text5 {
-    display: none;
-}
-
 .slides-text > p {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    /*white-space: nowrap;*/
+    display: none;
 }
 
 .pagination {
@@ -132,7 +136,6 @@ label:hover .button {
 #btn4:checked ~ .controls_text > .slides-text > .text4,
 #btn5:checked ~ .controls_text > .slides-text > .text5 {
     display: block;
-    opacity: 1;
 }
 
 #btn1:checked ~ .controls_text > .pagination > .label1 > .button,
