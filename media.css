@@ -1,0 +1,14 @@
+@media (max-width: 1080px) {
+    .container {
+        width: 60%;
+        transition: width .5s;
+    }
+
+    .controls_text {
+        flex-direction: column-reverse;
+    }
+
+    .slides-text {
+        align-self: start;
+    }
+}

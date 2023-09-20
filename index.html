@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>CSS Meme slider by Cherkashin Egor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
 </head>
 <body>
-$END$
+<div class="container">
+    <input type="radio" name="slide" id="btn1" checked></input>
+    <input type="radio" name="slide" id="btn2"></input>
+    <input type="radio" name="slide" id="btn3"></input>
+    <input type="radio" name="slide" id="btn4"></input>
+    <input type="radio" name="slide" id="btn5"></input>
+    <div class="slider">
+        <div class="slider-images">
+            <div class="slide-image first-image">
+                <img src="images/meme-1.jpeg" alt="Love programming" class="image">
+            </div>
+            <div class="slide-image">
+                <img src="images/meme-2.png" alt="Refactor code" class="image">
+            </div>
+            <div class="slide-image">
+                <img src="images/meme-3.webp" alt="Cat and Code" class="image">
+            </div>
+            <div class="slide-image">
+                <img src="images/meme-4.jpeg" alt="IT ways" class="image">
+            </div>
+            <div class="slide-image">
+                <img src="images/meme-5.png" alt="Fixing the bugs" class="image">
+            </div>
+        </div>
+    </div>
+
+    <div class="controls_text">
+        <div class="slides-text">
+            <p class="text1 opacityOnOff">Я обожаю программирование!</p>
+            <p class="text2 opacityOnOff">Let me refactor code...</p>
+            <p class="text3 opacityOnOff">Два занятия программиста на удалёнке</p>
+            <p class="text4 opacityOnOff">Будни в сфере IT</p>
+            <p class="text5 opacityOnOff">Fixing the bugs</p>
+        </div>
+        <div class="pagination">
+            <label for="btn1" class="label1">
+                <div class="button"></div>
+            </label>
+            <label for="btn2" class="label2">
+                <div class="button"></div>
+            </label>
+            <label for="btn3" class="label3">
+                <div class="button"></div>
+            </label>
+            <label for="btn4" class="label4">
+                <div class="button"></div>
+            </label>
+            <label for="btn5" class="label5">
+                <div class="button"></div>
+            </label>
+        </div>
+    </div>
+</div>
 </body>
 </html>
